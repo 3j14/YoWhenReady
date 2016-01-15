@@ -29,7 +29,7 @@ or just download the repo as a ZIP-File
 $ cd yo
 $ . install.sh
 ```
-Yo will now be installed.
+Yo will now install.
 
 ```sh
 $ rm -r yo
@@ -51,6 +51,10 @@ You can test your configuration with
 ```sh
 $ yo -t
 ```
+
+## Notice
+
+This programm is using the requests python API (python-requests.org) by Kenneth Reitz.
 
 ## License
 Copyright 2016 Jonas Drotleff
