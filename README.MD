@@ -7,7 +7,7 @@ All you do is:
 ```sh
 $ yo ping -c 5 8.8.8.8
 ```
-You can *replace ping -c 5 8.8.8.8* with any other command.
+You can replace *ping -c 5 8.8.8.8* with any other command.
 
 ## Installation
 
