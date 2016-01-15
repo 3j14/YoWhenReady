@@ -37,7 +37,7 @@ $ rm -r yo
 To remove the installer files
 
 Now you need to go to dev.justyo.co and sign in with your normal account.
-Select *+ NEW ACCOUNT* and create a new account (yo need it to send yo the yo notifications when you command finnished). Select any name and press *create* at the bottom of the page.
+Select *+ NEW ACCOUNT* and create a new account (you need it to send yo the yo notifications when you command finnished). Select any name and press *create* at the bottom of the page.
 View your API-Key and copy it.
 Open a new terminal and type
 
