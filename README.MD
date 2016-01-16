@@ -3,7 +3,7 @@
 ## About
 **YO!**
 
-This is a simple and easy-to-use tool to get yo-push-notifications on your mobile device when a command finnished so you can grap a coffee and sit back while your code compiles.
+This is a simple and easy-to-use tool to get yo-push-notifications on your mobile device when a command finished so you can grap a coffee and sit back while your code compiles.
 All you do is:
 ```sh
 $ yo ping -c 5 8.8.8.8
