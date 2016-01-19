@@ -35,7 +35,7 @@ $ . install.sh
 Yo will now install.
 
 ```sh
-$ rm -r yo
+$ cd .. && rm -r yo
 ```
 To remove the installer files
 
