@@ -55,6 +55,9 @@ You can test your configuration with
 $ yo -t
 ```
 
+You can add the script to the build process of your favourite IDE to get notified when you code is compiled/build.
+
+
 ## Notice
 
 This programm is using the requests python API (python-requests.org) by Kenneth Reitz.
