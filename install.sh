@@ -1,21 +1,43 @@
 #/bin/bash
 
-DIRINSTALL=/usr/share/yo/
+DIRINSTALL=~/.yo
 DIR="${BASH_SOURCE%/*}"
 
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 
-sudo mkdir $DIRINSTALL
+install_yo () {
+  mkdir $DIRINSTALL
 
-sudo cp $DIR/yo.py $DIRINSTALL
-sudo cp $DIR/yo.conf $DIRINSTALL
-sudo cp $DIR/yoconf.sh $DIRINSTALL
-sudo cp -r $DIR/requests $DIRINSTALL
-sudo cp $DIR/yo /usr/bin/
+  cp $DIR/yo.py $DIRINSTALL/
+  cp $DIR/yo.conf $DIRINSTALL/
+  cp $DIR/yoconf.sh $DIRINSTALL/
+  cp -r $DIR/requests $DIRINSTALL/
+  cp $DIR/yo $DIRINSTALL/
 
-sudo chmod +x /usr/bin/yo
+  sudo chmod +x $DIRINSTALL/yo
 
-export PATH="$PATH:/usr/bin/yo"
+  echo export PATH=\$PATH:$DIRINSTALL/ >> ~/.bash_profile
 
-echo "Type 'yo -c' to configure yo."
+  echo -n "Username: "
+  	read yn_user
+  	sudo echo Username = $yn_user >> ~/.yo/yo.conf
+  echo ""
+  echo "To use yo just type 'yo' followed by any command of your choice."
+  echo "Example:"
+  echo "--------"
+  echo "yo sudo ping -c 5 www.google.com"
+  echo "--------"
+  echo "Or just type yo -t to test your configuration."
+  echo ""
+  echo "Type 'yo -c' to reconfigure yo."
+}
 
+while true; do
+    read -p "You are about to install yo. Continue? Y/n " yn
+    case $yn in
+        [Yy]* ) install_yo
+        break;;
+        * ) echo "Installation aborted!"
+        break;;
+    esac
+done

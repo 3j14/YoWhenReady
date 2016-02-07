@@ -1,12 +1,19 @@
-import configparser
 import requests
 import os
+from os.path import expanduser
 
-conf_file = os.path.realpath(os.path.join('/usr/share/yo/','yo.conf'))
-Config = configparser.RawConfigParser()
+conf_file = os.path.realpath(os.path.join(expanduser("~"),'.yo/yo.conf'))
+
+try:
+	import ConfigParser
+	Config = ConfigParser.RawConfigParser()
+except ImportError:
+	import configparser
+	Config = configparser.RawConfigParser()
+
 Config.read(conf_file)
-key= Config.get('config','APIKey')
-user= Config.get('config','Username')
+key=Config.get('config','APIKey')
+user=Config.get('config','Username')
 
 print("Sending YO to %s" % user)
 

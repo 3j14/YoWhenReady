@@ -5,11 +5,11 @@ for i
 do
 	if [ "$i" = "-c" -a "$noparam" == 1 ]
 		then
-		 sudo bash /usr/share/yo/yoconf.sh
+		 sudo bash ~/.yo/yoconf.sh
 		 break
 	elif [ "$i" = "-t" -a "$noparam" == 1 ]
 		then
-		 python /usr/share/yo/yo.py
+		 python ~/.yo/yo.py
 		 break
 	else
 		 noparam=0
@@ -18,5 +18,5 @@ do
 done
 if [ -n "$arg" ]
 then
-$arg && python /usr/share/yo/yo.py
+$arg && python ~/.yo/yo.py
 fi
