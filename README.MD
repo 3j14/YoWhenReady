@@ -80,8 +80,9 @@ Copyright 2016 Jonas Drotleff
   See the License for the specific language governing permissions and
   limitations under the License.
 
-  ### Notice
 
-  This program is using the requests python API (python-requests.org) by Kenneth Reitz.
+### Notice
 
-  Yo is owned and operated by Life Before Us, LLC
+This program is using the requests python API (python-requests.org) by Kenneth Reitz.
+
+Yo is owned and operated by Life Before Us, LLC
