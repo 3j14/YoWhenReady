@@ -36,14 +36,10 @@
 
 <p><strong>YO!</strong></p>
 
-<p>This is a simple and easy-to-use tool to get yo-push-notifications on your mobile device when a command finished so you can grap a coffee and sit back while your code compiles.
+<p>This is a simple and easy-to-use tool to get yo-push-notifications on your mobile device when a command finished so you can grab a coffee and sit back while your code compiles.
 All you do is:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ yo ping -c 5 8.8.8.8</pre></div>
-
-<p>You can replace <em>ping -c 5 8.8.8.8</em> with any other command.</p>
-
-<p>This code was written in a tty with vim while arch was isntalling. Because who needs an IDE?</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -55,44 +51,79 @@ All you do is:</p>
 <li>A yo account (justyo.co)</li>
 <li>The yo app (Android, iOS, etc.)</li>
 <li>Linux or Mac OS X</li>
-<li>Python 3 or higher (python.org/downloads/)</li>
+<li>Python 2.7+ or 3+ (python.org/downloads/)</li>
 <li>git (optional)</li>
 </ul>
 
 <h4>
 <a id="set-up" class="anchor" href="#set-up" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set Up</h4>
 
-<div class="highlight highlight-source-shell"><pre>$ git clone https://github.com/Jonas-Drotleff/yo.git</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ git clone https://github.com/Jonas-Drotleff/yo.git yo</pre></div>
 
-<p>or just download the repo as a ZIP-File</p>
+<p>or just download the repo manually</p>
+
+<p>Navigate into the directory and execute the <em>install.sh</em> script:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> yo
 $ <span class="pl-c1">.</span> install.sh</pre></div>
 
-<p>Yo will now install.</p>
+<p>Yo will now install. Accept with <code>y</code>. You will be asked to insert your username.</p>
+
+<h3>
+<a id="after-installation" class="anchor" href="#after-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>After installation</h3>
+
+<p>If you want to remove the installer you can use the following command:</p>
 
 <div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> .. <span class="pl-k">&amp;&amp;</span> rm -r yo</pre></div>
 
-<p>To remove the installer files</p>
-
-<p>Now you need to go to dev.justyo.co and sign in with your normal account.
-Select <em>+ NEW ACCOUNT</em> and create a new account (you need it to send yo the yo notifications when you command finnished). Select any name and press <em>create</em> at the bottom of the page.
-View your API-Key and copy it.
-Open a new terminal and type</p>
-
-<div class="highlight highlight-source-shell"><pre>$ yo -c</pre></div>
-
-<p>insert the API-Key and press enter.
-Now just insert the username that should recieve a push-notification and press enter again.</p>
-
-<p>You can test your configuration with</p>
-
-<div class="highlight highlight-source-shell"><pre>$ yo -t</pre></div>
-
 <h2>
-<a id="notice" class="anchor" href="#notice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notice</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>This programm is using the requests python API (python-requests.org) by Kenneth Reitz.</p>
+<p>Use the command <code>yo</code> in the commandline in connection with any other command as you may be used to with the <code>sudo</code> command.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ yo ping -c 5 www.google.com</pre></div>
+
+<p>Yo works with any command.</p>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yo -c</code></td>
+<td>change username</td>
+</tr>
+<tr>
+<td><code>yo -t</code></td>
+<td>test configuration</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a id="ide-integration" class="anchor" href="#ide-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IDE integration</h3>
+
+<p>JetBrains Intelj IDEA/Android Studio:</p>
+
+<ol>
+<li>Go to <code>Run</code> &gt; <code>Edit Configurations...</code>
+</li>
+<li>Under 'Before launch', press the <code>+</code>
+</li>
+<li>Select 'Run External tool'</li>
+<li><code>+</code></li>
+<li>Give it a name (such as 'yo when ready') and optionally add a description</li>
+<li>Insert <code>yo</code> in 'Program'</li>
+<li>Insert <code>-t</code> in 'Parameters'</li>
+<li>Leave everything default and press <code>OK</code>
+</li>
+</ol>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
@@ -111,6 +142,13 @@ Now just insert the username that should recieve a push-notification and press e
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.</p>
+
+<h3>
+<a id="notice" class="anchor" href="#notice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notice</h3>
+
+<p>This program is using the requests python API (python-requests.org) by Kenneth Reitz.</p>
+
+<p>Yo is owned and operated by Life Before Us, LLC</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/Jonas-Drotleff">Jonas-Drotleff</a></p>
