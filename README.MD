@@ -1,7 +1,6 @@
 # Yo when ready
 
 ## About
-------
 **YO!**
 
 This is a simple and easy-to-use tool to get yo-push-notifications on your mobile device when a command finished so you can grab a coffee and sit back while your code compiles.
@@ -11,8 +10,6 @@ $ yo ping -c 5 8.8.8.8
 ```
 
 ## Installation
-------
-
 ### What you need
   + A yo account (justyo.co)
   + The yo app (Android, iOS, etc.)
@@ -21,7 +18,6 @@ $ yo ping -c 5 8.8.8.8
   + git (optional)
 
 #### Set Up
-
 ```sh
 $ git clone https://github.com/Jonas-Drotleff/yo.git yo
 ```
@@ -38,14 +34,12 @@ $ . install.sh
 Yo will now install. Accept with `y`. You will be asked to insert your username.
 
 ### After installation
-
 If you want to remove the installer you can use the following command:
 ```sh
 $ cd .. && rm -r yo
 ```
 
 ## Usage
--------
 Use the command `yo` in the commandline in connection with any other command as you may be used to with the `sudo` command.
 
 Example:
@@ -63,17 +57,15 @@ Yo works with any command.
 ### IDE integration
 JetBrains Intelj IDEA/Android Studio:
   1. Go to `Run` > `Edit Configurations...`
-  2. Select the type of program you execute/build in 'Defaults' (For Android Apps it is `Android Application`)
-  3. Under 'Before launch', press the `+`
-  4. Select 'Run External tool'
-  5. `+`
-  6. Give it a name (such as 'yo when ready') and optionally add a description.
-  7. Insert `yo` in 'Program'
-  8. Insert `t` in 'Parameters'
-  9. Leave everything default and press `OK`
+  2. Under 'Before launch', press the `+`
+  3. Select 'Run External tool'
+  4. `+`
+  5. Give it a name (such as 'yo when ready') and optionally add a description.
+  6. Insert `yo` in 'Program'
+  7. Insert `-t` in 'Parameters'
+  8. Leave everything default and press `OK`
 
 ## License
-------
 Copyright 2016 Jonas Drotleff
 
   Licensed under the Apache License, Version 2.0 (the "License");
