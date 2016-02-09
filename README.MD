@@ -60,7 +60,7 @@ JetBrains Intelj IDEA/Android Studio:
   2. Under 'Before launch', press the `+`
   3. Select 'Run External tool'
   4. `+`
-  5. Give it a name (such as 'yo when ready') and optionally add a description.
+  5. Give it a name (such as 'yo when ready') and optionally add a description
   6. Insert `yo` in 'Program'
   7. Insert `-t` in 'Parameters'
   8. Leave everything default and press `OK`
