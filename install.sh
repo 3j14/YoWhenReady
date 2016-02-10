@@ -16,6 +16,7 @@ install_yo () {
 
   sudo chmod +x $DIRINSTALL/yo
 
+  echo \#yo >> ~/.bash_profile
   echo export PATH=\$PATH:$DIRINSTALL/ >> ~/.bash_profile
 
   echo -n "Username: "

@@ -39,8 +39,12 @@ If you want to remove the installer you can use the following command:
 $ cd .. && rm -r yo
 ```
 
+#### Uninstall
+Just run the `uninstall.sh` script. You may need to do this as su.
+Accept with y and the `~/.yo` directory will be removed. You can remove the line under '#yo' in your ~/.bash_profile file.
+
 ## Usage
-Use the command `yo` in the commandline in connection with any other command as you may be used to with the `sudo` command.
+Use the command `yo` in the terminal in connection with any other command as you may be used to with the `sudo` command.
 
 Example:
 ```sh
