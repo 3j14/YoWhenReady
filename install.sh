@@ -18,7 +18,8 @@ install_yo () {
 
   echo \#yo >> ~/.bash_profile
   echo export PATH=\$PATH:$DIRINSTALL/ >> ~/.bash_profile
-
+  export PATH=$PATH:$DIRINSTALL/
+  
   echo -n "Username: "
   	read yn_user
   	sudo echo Username = $yn_user >> ~/.yo/yo.conf

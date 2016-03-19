@@ -1,16 +1,15 @@
 #!/bin/sh
 arg=""
 noparam=1
+
 for i
 do
-	if [ "$i" = "-c" -a "$noparam" == 1 ]
-		then
-		 sudo bash ~/.yo/yoconf.sh
-		 break
-	elif [ "$i" = "-t" -a "$noparam" == 1 ]
-		then
-		 python ~/.yo/yo.py
-		 break
+	if [ $i = "-c" -a $noparam -eq 1 ]
+	then
+		bash ~/.yo/yoconf.sh && exit
+	elif [ $i = "-t" -a $noparam -eq 1 ]
+	then
+		python ~/.yo/yo.py && exit
 	else
 		 noparam=0
 	fi
@@ -18,5 +17,9 @@ do
 done
 if [ -n "$arg" ]
 then
-$arg && python ~/.yo/yo.py
+	$arg && python ~/.yo/yo.py
+else
+	red='\033[0;31m'
+	normal='\033[0\033[0m'
+	echo "${red}Usage:\n    yo [command]${normal}"
 fi
