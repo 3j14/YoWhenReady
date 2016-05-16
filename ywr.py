@@ -2,7 +2,7 @@ import requests
 import os
 from os.path import expanduser
 
-conf_file = os.path.realpath(os.path.join(expanduser("~"),'.yo/yo.conf'))
+conf_file = os.path.realpath(os.path.join(expanduser("~"),'.ywr/ywr.conf'))
 
 try:
 	import ConfigParser

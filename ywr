@@ -6,10 +6,10 @@ for i
 do
 	if [ $i = "-c" -a $noparam -eq 1 ]
 	then
-		bash ~/.yo/yoconf.sh && exit
+		bash ~/.ywr/ywrconf.sh && exit
 	elif [ $i = "-t" -a $noparam -eq 1 ]
 	then
-		python ~/.yo/yo.py && exit
+		python ~/.ywr/ywr.py && exit
 	else
 		 noparam=0
 	fi
@@ -17,9 +17,9 @@ do
 done
 if [ -n "$arg" ]
 then
-	$arg && python ~/.yo/yo.py
+	$arg && python ~/.ywr/ywr.py
 else
 	red='\033[0;31m'
 	normal='\033[0\033[0m'
-	echo "${red}Usage:\n    yo [command]${normal}"
+	echo "${red}Usage:\n    ywr [command]${normal}"
 fi

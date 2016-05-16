@@ -1,11 +1,11 @@
 #/bin/bash
 
-DIRINSTALL=~/.yo
+DIRINSTALL=~/.ywr
 while true; do
-    read -p "You are about to uninstall yo. Continue? Y/n " yn
+    read -p "You are about to uninstall ywr. Continue? Y/n " yn
     case $yn in
         [Yy]* )
-        rm -r $DIRINSTALL
+        rm -rf $DIRINSTALL
         echo "All done. Bye!"
         break;;
         * ) echo "Uninstallation aborted!"
