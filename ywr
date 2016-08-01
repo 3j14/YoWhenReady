@@ -18,11 +18,7 @@ done
 
 if [ -n "$arg" ]
 then
-	if [[ $OSTYPE == darwin* ]]
-	  then
-		  $arg && python ~/.ywr/ywr.py && sleep 2; printf '\a'
-	  else
-		  $arg && python ~/.ywr/ywr.py
+	$arg && python ~/.ywr/ywr.py && sleep 1; printf '\a'
 else
 	red='\033[0;31m'
 	normal='\033[0\033[0m'

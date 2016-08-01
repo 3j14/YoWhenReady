@@ -3,6 +3,13 @@
 DIRINSTALL=~/.ywr
 CURRENTDIR="${BASH_SOURCE%/*}"
 
+USEREXISTS="{
+  \"exists\": true
+}"
+
+R="$(tput setaf 1)"
+RESET="$(tput sgr0)"
+
 if [[ ! -d "$CURRENTDIR" ]]; then CURRENTDIR="$PWD"; fi
 
 install_ywr () {
@@ -15,7 +22,15 @@ install_ywr () {
   cp -r $CURRENTDIR/requests $DIRINSTALL/
   cp $CURRENTDIR/ywr $DIRINSTALL/
 
-  sudo chmod +x $DIRINSTALL/ywr
+  if [[ $UID != 0 ]]; then
+	echo ""
+    echo -e "${R}Why you no sudo?"
+	echo -e "No worries, I got you covered. I can do this sudo thing too!"
+	echo -e "Just enter your root password:${RESET}"
+	sudo chmod +x $DIRINSTALL/ywr
+else
+		chmod +x $DIRINSTALL/ywr
+fi
 
   touch ~/.bash_profile
 
@@ -24,14 +39,27 @@ install_ywr () {
 
   export PATH=$PATH:$DIRINSTALL/
 
-  echo -n "Username: "
-  	read yn_user
-  	sudo echo Username = $yn_user >> ~/.ywr/ywr.conf
+  echo -e "I need your username for YO!"
+
+  while true; do
+	  echo -n "Username: "
+	  read username
+	  STATUS=$(curl -s "https://api.justyo.co/check_username/?api_token=ef63a4f2-548a-46ef-924e-7141e0af2358&username=$username")
+	  if [ "$STATUS" == "$USEREXISTS" ]
+	  	then
+		echo "User exists!"
+	  	sudo echo Username = $username >> ~/.ywr/ywr.conf
+		break
+		else
+		echo "User does not exists."
+	fi
+  done
+
   echo ""
   echo "To use ywr just type 'ywr' followed by any command of your choice."
   echo "Example:"
   echo "--------"
-  echo "ywr sudo ping -c 5 www.google.com"
+  echo "ywr sudo npm install -g express"
   echo "--------"
   echo "Or just type ywr -t to test your configuration."
   echo ""
