@@ -3,9 +3,10 @@
 DIRINSTALL=~/.ywr
 CURRENTDIR="${BASH_SOURCE%/*}"
 
-if [[ ! -d "$CURRENTDIR" ]]; then DIR="$PWD"; fi
+if [[ ! -d "$CURRENTDIR" ]]; then CURRENTDIR="$PWD"; fi
 
 install_ywr () {
+  rm -rf $DIRINSTALL
   mkdir $DIRINSTALL
 
   cp $CURRENTDIR/ywr.py $DIRINSTALL/
@@ -20,6 +21,7 @@ install_ywr () {
 
   echo \#ywr >> ~/.bash_profile
   echo export PATH=\$PATH:$DIRINSTALL/ >> ~/.bash_profile
+
   export PATH=$PATH:$DIRINSTALL/
 
   echo -n "Username: "
